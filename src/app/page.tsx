@@ -49,9 +49,17 @@ export default function HomePage() {
 
   React.useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 40);
+      const banner = document.getElementById("home");
+      if (banner) {
+        const rect = banner.getBoundingClientRect();
+        // Background color triggers ONLY when the hero banner has finished scrolling past the header
+        setScrolled(rect.bottom <= 90);
+      } else {
+        setScrolled(window.scrollY > 800);
+      }
     };
     window.addEventListener("scroll", handleScroll, { passive: true });
+    handleScroll();
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 

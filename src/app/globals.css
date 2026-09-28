@@ -96,26 +96,31 @@ button {
   left: 0;
   right: 0;
   z-index: 100;
-  background: linear-gradient(180deg, rgba(3, 20, 36, 0.82) 0%, rgba(3, 20, 36, 0.4) 70%, transparent 100%);
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  background: transparent;
+  transition: background 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease;
+  border-bottom: none !important;
 }
 
 .navbar-sticky.scrolled {
-  background: rgba(5, 34, 56, 0.95);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
+  background: rgba(5, 34, 56, 0.98);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
   box-shadow: 0 4px 24px rgba(0, 0, 0, 0.3);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  border-bottom: none !important;
 }
 
 .navbar-inner {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 8px 4%;
+  padding: 16px 4%;
   max-width: 1440px;
   margin: 0 auto;
+  transition: padding 0.3s ease;
+}
+
+.navbar-sticky.scrolled .navbar-inner {
+  padding: 12px 4%;
 }
 
 .brand-logo-combo {
@@ -126,36 +131,41 @@ button {
 }
 
 .navbar-emblem {
-  height: 40px;
+  height: 56px;
   width: auto;
   object-fit: contain;
-  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.5));
-  transition: transform 0.2s ease;
+  filter: drop-shadow(0 2px 10px rgba(0, 0, 0, 0.6));
+  transition: all 0.3s ease;
+}
+
+.navbar-sticky.scrolled .navbar-emblem {
+  height: 48px;
 }
 
 .brand-logo-combo:hover .navbar-emblem {
-  transform: scale(1.06);
+  transform: scale(1.05);
 }
 
 .nav-menu {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 16px;
   list-style: none;
 }
 
 .nav-link {
-  font-size: 0.90rem;
-  font-weight: 600;
+  font-size: 0.96rem;
+  font-weight: 700;
   color: #ffffff !important;
-  padding: 6px 12px;
-  border-radius: 6px;
+  padding: 8px 15px;
+  border-radius: 8px;
   transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
-  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.9), 0 0 2px rgba(0,0,0,0.8);
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.95), 0 0 3px rgba(0, 0, 0, 0.85);
   position: relative;
   letter-spacing: 0.2px;
   text-decoration: none;
   display: inline-block;
+  border: none !important;
 }
 
 .nav-link:hover {
@@ -166,35 +176,24 @@ button {
 
 .nav-link.active {
   color: #ffffff !important;
-  background: rgba(229, 35, 50, 0.35);
-  border: 1px solid rgba(255, 120, 130, 0.45);
+  background: rgba(229, 35, 50, 0.32);
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.35);
-}
-
-.nav-link.active::after {
-  content: "";
-  position: absolute;
-  bottom: -2px;
-  left: 20%;
-  right: 20%;
-  height: 2px;
-  background: #ff4d5a;
-  border-radius: 2px;
-  box-shadow: 0 0 8px #ff4d5a;
+  border: none !important;
 }
 
 .btn-book-nav {
   background: var(--red-main);
   color: #ffffff;
   font-weight: 700;
-  font-size: 0.82rem;
-  padding: 8px 18px;
+  font-size: 0.88rem;
+  padding: 10px 22px;
   border-radius: 50px;
   display: inline-flex;
   align-items: center;
-  gap: 6px;
+  gap: 8px;
   transition: all 0.2s ease;
   box-shadow: 0 4px 14px rgba(229, 35, 50, 0.4);
+  border: none !important;
 }
 
 .btn-book-nav:hover {
@@ -202,6 +201,7 @@ button {
   transform: translateY(-2px);
   box-shadow: 0 6px 18px rgba(229, 35, 50, 0.55);
 }
+
 
 .navbar-actions {
   display: flex;
@@ -1881,9 +1881,9 @@ button {
 }
 
 @media (max-width: 520px) {
-  .navbar-inner { padding: 8px 12px; }
-  .navbar-emblem { height: 34px; }
-  .btn-book-nav { padding: 6px 12px; font-size: 0.78rem; border-radius: 30px; }
+  .navbar-inner { padding: 12px 14px; }
+  .navbar-emblem { height: 46px; }
+  .btn-book-nav { padding: 8px 14px; font-size: 0.82rem; border-radius: 30px; }
 
   .stats-bar-inner { grid-template-columns: repeat(2, 1fr); gap: 16px 10px; }
   .departments-12-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
