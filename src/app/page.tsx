@@ -371,18 +371,18 @@ export default function HomePage() {
 
         <div className="departments-12-grid">
           {[
-            { name: "General Medicine", icon: <Stethoscope size={26} /> },
-            { name: "General Surgery", icon: <Scissors size={26} /> },
-            { name: "Orthopedics", icon: <Bone size={26} /> },
-            { name: "Gynecology & Obstetrics", icon: <HeartPulse size={26} /> },
-            { name: "Pediatrics", icon: <Baby size={26} /> },
-            { name: "Cardiology", icon: <Heart size={26} /> },
-            { name: "Neurology", icon: <Brain size={26} /> },
-            { name: "Urology", icon: <Activity size={26} /> },
-            { name: "ENT", icon: <Ear size={26} /> },
-            { name: "Dermatology", icon: <Sparkles size={26} /> },
-            { name: "Ophthalmology (Eye Care)", icon: <Eye size={26} /> },
-            { name: "Radiology & Imaging", icon: <Scan size={26} /> }
+            { name: "General Medicine", icon: <Stethoscope size={28} strokeWidth={2.4} /> },
+            { name: "General Surgery", icon: <Scissors size={28} strokeWidth={2.4} /> },
+            { name: "Orthopedics", icon: <Bone size={28} strokeWidth={2.4} /> },
+            { name: "Gynecology & Obstetrics", icon: <HeartPulse size={28} strokeWidth={2.4} /> },
+            { name: "Pediatrics", icon: <Baby size={28} strokeWidth={2.4} /> },
+            { name: "Cardiology", icon: <Heart size={28} strokeWidth={2.4} /> },
+            { name: "Neurology", icon: <Brain size={28} strokeWidth={2.4} /> },
+            { name: "Urology", icon: <Activity size={28} strokeWidth={2.4} /> },
+            { name: "ENT", icon: <Ear size={28} strokeWidth={2.4} /> },
+            { name: "Dermatology", icon: <Sparkles size={28} strokeWidth={2.4} /> },
+            { name: "Ophthalmology (Eye Care)", icon: <Eye size={28} strokeWidth={2.4} /> },
+            { name: "Radiology & Imaging", icon: <Scan size={28} strokeWidth={2.4} /> }
           ].map((dept, idx) => (
             <div
               key={idx}
@@ -391,7 +391,7 @@ export default function HomePage() {
               title={`Book appointment in ${dept.name}`}
             >
               <div className="dept-circle-icon">{dept.icon}</div>
-              <div className="dept-box-name">{dept.name}</div>
+              <strong className="dept-box-name">{dept.name}</strong>
             </div>
           ))}
         </div>
